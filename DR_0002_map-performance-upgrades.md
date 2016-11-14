@@ -16,21 +16,23 @@ Currently, there are two client-side bottlenecks:
 
 To increase page loading times and lower latency until the map starts to render, we will introduce asynchronous loading and rendering of the map.
 
+We build on our existing architecture and introduces asynchronous loading of geographic features on the map and attempt to improve the performance client-side map-related Javascript plugins.
+
+### Asynchronous loading
+
+We will extend existing API endpoints that list spatial units with pagination, which allows us to load geographic features using several separate requests that each return a fraction of all spatial units in a project. 
+
+The page will load with an empty map (or a map providing background information, such as background map tiles, the project extent); spatial units are loaded and added to the map when the DOM is ready. 
+
+### Improve client-side map plugins. 
+
 There are three approaches (we need to decide for one):
 
-1. **We improve performance on top of our existing architecture** by developing an approach to gradually load features onto the map. The page loads first with an empty map and as soon as the page is ready, automatically start loading features onto the map. Our existing API needs to be extended with pagination to allow for sliced retrieval of features. 
-
-    This approach also requires improvements to Leaflet.Deflate. (1) We can lower the number of features that is processed by ignoring points when iterating over features after zooming the map. (2) Reduce the amount of features being deflated/inflated after zoom by only considering those features that are affected. That means, if the user zooms from level 2 to level 5, we won’t process features where the threshold for deflating is lower than 2 or greater than 5. (3) We could further restrict that amount of processed data by only considering feature visible in the current map extent. 
-
-2. **We implement a tile map service** using an existing mapping framework; e.g., Mapnik, Mapserver or Geoserver. Mapnik is only a renderer for geographic information, we would need to build the TMS API around it, Mapserver and Geoserver provide this out-of-the-box. The Mapnik approach is more light-weight and flexible in the first place but also requires more long-term maintenance. The tile map server should not run on our primary server; we need a new AWS instance to host the system.
-3. **We implement a vector tile service.** There are [several solutions](https://github.com/mapbox/awesome-vector-tiles#servers) out there to set up a server for vector tiles. I don’t have any experience with vector tiles and what it requires to run a vector tile service. It is also currently not clear to me how vector tiles affect the performance of the map in older browsers. This approach requires _a lot_ of research. 
-
-**Approach 1** does not require a significant extension of the current architecture; this might be the solution that is quickest to implement. There is, however, a risk that the effect of improving Leaflet.Deflate is not as good as we expected. 
-
-**Approach 2** requires a significant extension of our architecture. An implementation may take longer that approach 1 but can be solved in reasonable time. I’m very confident that this method will improve performance significantly.
-
-**Approach 3** requires a significant extension of our architecture. I think this is the riskiest approach, mostly because I don’t know much about it and it would need some research before implementing a solution. 
+1. We will lower the number of features that is processed by ignoring points when iterating over features after zooming the map. 
+2. We will reduce the amount of features being deflated/inflated after zoom by only considering those features that are affected. That means, if the user zooms from level 2 to level 5, we won’t process features where the threshold for deflating is lower than 2 or greater than 5. 
 
 ## Consequences
 
-TBD. 
+Splitting uploading and rendering of features will reduce page load times. Improving processing of features in Leaflet.Deflate will also improve the performance of map interactions. 
+
+This is a first step towards improving the client-side performance on map views. We need to keep it mind that especially the work on improving Leaflet.Deflate might not improve performance as required in our longer-term goals. We need to do additional research towards alternative approaches, for instance, using vector tiles or raster tiles. 
