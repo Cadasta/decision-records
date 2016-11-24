@@ -1,7 +1,7 @@
 # 0001: Blocking update of questionnaires
 
 - **Author:** Oliver Roick
-- **Status: ** Draft proposal
+- **Status:** Accepted, 2016-11-23
 
 ## Context
 
