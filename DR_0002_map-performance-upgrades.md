@@ -1,7 +1,7 @@
 # 0002: Map performance upgrades
 
 - **Author:** Oliver Roick
-- **Status:** Draft proposal
+- **Status:** Accepted, 2016-11-23
 
 ## Context
 
