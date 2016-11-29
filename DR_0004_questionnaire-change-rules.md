@@ -16,16 +16,18 @@ With this being totally correct, it is also true that sometimes there is a need 
 The following is an exhaustive list of the allowed changes when updating a questionnaire (i.e. uploading a new version of it) once that there is some data in the project. Anything that is not listed in the following list is not allowed. If there is no data yet in the project, then any change in the questionnaire will be allowed.
 
 List of allowed changes: 
+
 1. Changes in `form_id` and `title` (in the `settings` tab)
 2. Change in the default language to use (`default_language` in `settings` tab)
 3. Add new languages for the labels (i.e. adding `label:xx` column in `survey` and `choices` tab)
 4. Change in language used in labels
 5. Removal of a language used in labels (i.e. deleting `label:xx` column in `survey`and `choices` tab)
 6. Any change in any label in either `survey` or `choices`
-7. Adding new choices for the multiple-choice questions in `choices` tab, with the exception of `respondent`, `land_type`, `tenure_type` and `geo_type`. These will not accept any changes for now (we could revisit this when adding support for additional `respondent`, `land_type` and `tenure_type). 
+7. Adding new choices for the multiple-choice questions in `choices` tab, with the exception of `respondent`, `land_type`, `tenure_type` and `geo_type`. These will not accept any changes for now (we could revisit this when adding support for additional `respondent`, `land_type` and `tenure_type`). 
 8. Add new fields in `survey` of any type
 
 By definition, anything not contained in the list above will not be allowed. Just showing here some examples of changes that will not be allowed:
+
 1. Change of field names
 2. Change of field types
 3. Removing existing fields
