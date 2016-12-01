@@ -1,7 +1,7 @@
 # 0004: Rules for changing existing XLSForm questionnaires
 
 - **Author:** David Palomino 
-- **Status:** Draft proposal
+- **Status:** Accepted, 2016-12-01
 
 ## Context
 
