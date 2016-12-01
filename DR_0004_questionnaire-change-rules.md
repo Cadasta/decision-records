@@ -25,6 +25,7 @@ List of allowed changes:
 6. Any change in any label in either `survey` or `choices`
 7. Adding new choices for the multiple-choice questions in `choices` tab, with the exception of `respondent`, `land_type`, `tenure_type` and `geo_type`. These will not accept any changes for now (we could revisit this when adding support for additional `respondent`, `land_type` and `tenure_type`). 
 8. Add new fields in `survey` of any type
+9. Former mandatory/required fields could be made optional, with the exemption of `party_type`, `party_name`, `tenure_type` and `location_type`. 
 
 By definition, anything not contained in the list above will not be allowed. Just showing here some examples of changes that will not be allowed:
 
@@ -32,6 +33,7 @@ By definition, anything not contained in the list above will not be allowed. Jus
 2. Change of field types
 3. Removing existing fields
 4. Removing choices in the multiple-choice fields
+5. Former optional fields in the questionnaire cannot be made required (`required` column `yes`). 
 
 ## Consequences
 
