@@ -19,7 +19,7 @@ In addition to emails, we will allow creating accounts by providing a mobile pho
 
 - An SMS is sent to the phone including a one-time code that needs to be entered on the site to verify the account. 
 - An SMS is sent to the phone including a one-time code to reset the password. The account owner enters the verification code along with the phone number on the platform site to be able to reset the password. 
-- A verification code is sent to both the old and the new phone number to change the phone number for the account. To effectively change the number, the account holder must enter both verification codes along with the corresponding phone number on the platform site. The SMS to the old phone number includes a shortlink to lock the account in case of an account breach. The SMS should also provide a point of contact to Cadasta so that we can take necessary action.
+- When the phone number is changed, a verification code is sent to the new number. The code must be entered on the site the verify the new number. An additional SMS is sent to the existing phone number advising of the change and directing the user to contact their project manager/owner if this is unauthorized. This is a generic message that includes only a point of contact at Cadasta; none of the user's or project manager's identifying information is included. 
 
 ## Consequences
 
