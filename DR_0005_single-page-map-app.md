@@ -1,9 +1,7 @@
 # 0005: Single Page Map Application
 
----
-
 - **Author:** Lindsey Jacks
-- **Status:** Draft Proposal, 2017-01-09
+- **Status:** Accepted, 2017-01-25
 
 
 
