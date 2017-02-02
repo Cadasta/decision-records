@@ -1,7 +1,7 @@
 # 0003: Allowing phone numbers to create an account
 
 - **Author**: Oliver Roick, Adrienne Platner
-- **Status**: Draft proposal
+- **Status**: Accepted, 2017-02-01
 
 ## Context
 
