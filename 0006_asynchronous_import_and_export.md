@@ -59,6 +59,8 @@ Notes for both workflows:
 
 All transport will occur over SSL. All S3 buckets will be encrypted.
 
+S3 allows user-defined metadata, which we can configure with the project ID, resource ID, etc, as needed to facilitate tracking of files from the platform side.
+
 Utilization of long polling enables the worker node to receive new queue messages as soon as they are available, eliminates the return of empty messages, and reduces the amount of polling required.
 
 Worker node(s) for clamAV and file processing will be autoscaled dynamically to meet demand as necessary.
