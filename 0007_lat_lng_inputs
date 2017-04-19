@@ -5,9 +5,14 @@
 - **Status:** Pending
 
 ## Context
+Currently, we do not support the ability for partners to add lat and lng coordinates.
 
+Format
+Ways to Automate... 
 
 Our goals are:
+* Allow users to transcribe coordinates from paper form
+* Allow users to transcribe coordinates from gps device
 
 
 ## Recommendation
@@ -17,3 +22,4 @@ Our goals are:
 
 
 ## Consequences
+* manual.. 
