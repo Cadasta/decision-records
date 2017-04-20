@@ -2,10 +2,15 @@
 # 0007: Adding Lat and Lng Coordinates for Location Geometries
 
 - **Author:** Katrina
+
 - **Status:** Pending
 
 ## Context
+
 Currently, we do not support the ability for partners to add lat and lng coordinates.
+
+- 
+- Type in lat and lng (what format) and then map takes you to the point and then someone can trace the boundary
 
 Format
 Ways to Automate... 
@@ -19,7 +24,7 @@ Our goals are:
 
 
 ## Benefits
-
+Another way to add data to Cadasta! The more the merrier.    
 
 ## Consequences
 * manual.. 
