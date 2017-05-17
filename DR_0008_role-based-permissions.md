@@ -18,7 +18,7 @@ We have found django-tutelary to have a negative effect when iterating over larg
 
 The platform permissioning would be better served by removing tutulary and replacing it with a well-documented roles-based system.
 
-The roles-based system has been detailed in the [Cadasta Platform Permissions](https://drive.google.com/open?id=1RnjuWzjxkbnntJQHxo2Rbg8AiigkydtG7dLvFWZtAnU) document. 
+The proposed roles-based system has been detailed in the [Cadasta Platform Permissions](https://drive.google.com/open?id=1RnjuWzjxkbnntJQHxo2Rbg8AiigkydtG7dLvFWZtAnU) document. 
 
 ### User Roles
 
