@@ -26,13 +26,13 @@ The proposed roles-based system has been detailed in the [Cadasta Platform Permi
 Any user that visits the platform without registering
 * **Public User:**
 A registered user that doesn’t belong to a project
-* **Project User:**
+* **Project Viewer:**
 A registered user with limited project permissions, mostly for viewing project data
 * **Data Collector:**
 A registered user that will be making data contributions to a project, mostly doing field work
 * **Project Manager:**
 A registered user that will manage the details, data, and users for a project
-* **Organization Manager:**
+* **Organization Administrator:**
 A registered user that manages projects for an organization and the organization itself
 * **Super User:**
 Internal Cadasta user that has all platform permissions
