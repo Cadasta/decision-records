@@ -28,6 +28,8 @@ Any user that visits the platform without registering
 A registered user that doesn’t belong to a project
 * **Project Viewer:**
 A registered user with limited project permissions, mostly for viewing project data
+* **Mobile Data Collector:**
+A registered user with limited permissions, for adding data through mobile devices
 * **Data Collector:**
 A registered user that will be making data contributions to a project, mostly doing field work
 * **Project Manager:**
