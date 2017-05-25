@@ -45,6 +45,8 @@ These roles are further detailed in the [User Profiles](https://drive.google.com
 
 The permissions for each role increase from the left to right in the permissions table, meaning that the permissions are only expanded and none are lost. For example, a Data Collector has all the permissions of a Project User plus more specific to the role. The Project Manager has all the permissions of the Data Collector plus more. The new permissions code should reflect this hierarchy. 
 
+The only exception to this is the Mobile Data Collector, whose main purpose is to add project data through mobile devices with no additional project permissions.
+
 An example of how the different roles would view a public project are detailed in the [Sample Project Page based on Roles](https://docs.google.com/document/d/1P4oQWZkjYUjQPzLNQK6y9mdyzUbte9Xc9-n7HkMXiWQ/edit?usp=sharing) document.
 
 ## Consequences
