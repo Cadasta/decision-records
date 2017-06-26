@@ -11,7 +11,7 @@ In addition to the information included in the backlog issue, we will provide a 
 - Error messages
 - How to handle corner cases
 
-In the GiHub issue the following information should have been provided before the creation of the DR: 
+In the GitHub issue the following information should have been provided before the creation of the DR: 
 - **Problem Statement:** Describing the use case/need this try to cover, and the background information behind it.
 - **Context/Use Case:** Providing some examples
 - **User Stories:** Description of the feature following the syntax “As a… I want to…”. Sometimes is not only a single User Story but a few of the marked with checkboxes. For the features that involved like 3-4 USs we will handle them using a single GitHub Issue in the backlog. For the big topics, we will be creating epics. 
