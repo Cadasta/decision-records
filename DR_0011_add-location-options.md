@@ -1,4 +1,4 @@
-# 0010: External file handling
+# 0011: Add location options
 
 - **Author:** Chandra Lash
 - **Status:** WIP Draft Proposal, 2017-06-29
