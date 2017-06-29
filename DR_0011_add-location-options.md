@@ -29,9 +29,9 @@ Via the web UI, when we are creating a new location and defining the geometry, w
 
 ### Analysis of the alternatives
 
-An alternative solution is by using a GIS software to convert GPX to SHP and then import that shp file when [#1589](https://github.com/Cadasta/cadasta-platform/issues/1589) is implemented. This does not address the manual input of coordinates.
+An alternative solution is by using a GIS software to convert GPX to SHP and then import that shp file when [#1589](https://github.com/Cadasta/cadasta-platform/issues/1589) is implemented. Another concern regarding the use of GPX files to define the geometries is that these files are usually generated a pretty ugly geometries and usually need some clean up before creating the actual geometry.
 
-Another concern regarding the use of GPX files to define the geometries is that these files are usually generated a pretty ugly geometries and usually need some clean up before creating the actual geometry.
+This does not address the manual input of coordinates.
 
 ### Scalability
 
