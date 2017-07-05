@@ -18,43 +18,40 @@ In the GitHub issue the following information should have been provided before t
 - **Description:** Detailed description including technical details related to the feature. 
 - **Link to DR:** Link to the associated DR (when applicable).
 
-## Description of the implemented use cases
+## Technical Specification 
 
-We will extend the information provided in the GH issue through the user stories and description. 
-
-
-## UI Changes
+### UI Changes
 
 - **UI Changes involved:** Yes/No
 - Link to last updated wireframes when necessary. Note that wireframes could be made for a bigger context. If that is the case, we will highlight the areas of the wireframes (pages for instance) that apply to the feature. 
 
 
-## Overview of the suggested solution 
+### Overview of the suggested solution 
 
 High level overview of the selected solution/implementation. 
 
 
-## Analysis of the alternatives
+### Analysis of the alternatives
 
 Summary of the different alternatives that have been considered during the research phase, including the reasons for selecting or not selecting each of them. Providing links to mockups, examples, etc could be useful. 
 
 
-## Architecture description 
+### Architecture description 
 
 Architecture design details for the implementation selected. 
 
 
-## Database changes
+### Database changes
 
 Description of database changes needed (if any), including migrations. 
 
 
-## Security considerations
+### Security considerations
 
 Analysis of the security implications, when needed. 
 
 
-## Scalability 
+### Scalability 
 
 Please, provide an analysis regarding the scalability of the proposed solution. Try to answer questions like: 
 - Is the proposed solution efficient for projects with lots of records or resources? How many? 
@@ -62,21 +59,21 @@ Please, provide an analysis regarding the scalability of the proposed solution. 
 - Latency or throughput considerations? 
 
 
-## Maintainability 
+### Maintainability 
 
 Include here all maintainability aspects that need to be considered. 
 
 
-## Costs considerations
+### Costs considerations
 
 If the suggested solutions has some costs implications. For instance, AWS costs, licensing, etc. 
 
 
-## Pre-requisites
+### Pre-requisites
 
 Are there any tasks that should be implemented before? If so, please provide links to appropriate DRs and/or GitHub issues. 
 
 
-## Defintion of Done
+### Defintion of Done
 
 Detailed description of tests to be successfully executed for the feature being considered done. This information should be also moved to the [Manual Test Cases spreadsheet](https://docs.google.com/spreadsheets/d/1JmKVAmdQgjdzg8YhrSDtfBtWckkv7aq4-ZIZCmwbbwU/edit#gid=0). 
