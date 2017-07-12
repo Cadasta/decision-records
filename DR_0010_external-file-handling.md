@@ -1,4 +1,4 @@
-# 0010: External file handling
+# 0010: External resource file handling
 
 - **Author:** Chandra Lash
 - **Status:** WIP Draft Proposal, 2017-07-11
@@ -7,12 +7,15 @@
 
 ## Problem overview
 
-The Cadasta Platform has inconsistent uses of referencing external files in the Platform. Not only does this complicate the code, it could potentially impede performance and create bugs over time due to uncontrollable third-party changes.
+The Cadasta Platform has inconsistent uses of referencing external static resource files (JS, CSS, fonts, images) in the Platform. Not only does this complicate the code, it could potentially impede performance and create bugs over time due to uncontrollable third-party changes.
 
 
 ## Suggested solution
 
 - Cadasta should adopt a standard practice of hosting all files locally on our servers.
+- These files should be located under `cadasta-platform/cadasta/core/static/` in their respective `css`, `fonts`, `img`, `js` folders.
+- We should maintain one version of these resource files to serve on all development environments.
+- These resource files should be updated as-needed as new versions are released.
 
 
 ## Other considerations
