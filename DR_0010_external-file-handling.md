@@ -7,7 +7,7 @@
 
 ## Problem overview
 
-The Cadasta Platform has inconsistent uses of referencing external static resource files (JS, CSS, fonts, images) in the Platform. Not only does this complicate the code, it could potentially impede performance and create bugs over time due to uncontrollable third-party changes.
+The Cadasta Platform is inconsistent in its referencing of external static resource files (CSS, fonts, images, JS) in the Platform. Not only does this complicate the code, it could potentially impede performance and create bugs over time due to uncontrollable third-party changes.
 
 
 ## Suggested solution
