@@ -73,15 +73,19 @@ Some investigation of alternative solutions has been carried out. Both `django-r
 This solution outlined below is based on a prototype implementation at https://github.com/Cadasta/cadasta-platform/pull/1667
 
 ##### Groups and Permissions
+
 The new permissions system leverages `django`'s existing `Group` and `Permission` models. A set of platform wide `Groups` and `Permissions` are created during the `loadstatic` phase of platform deployment. These `Groups` correspond to the platform user `Roles` outlined [here](https://docs.google.com/document/d/1RnjuWzjxkbnntJQHxo2Rbg8AiigkydtG7dLvFWZtAnU/edit). Permissions correspond to [actions](https://github.com/Cadasta/cadasta-platform/wiki/History-Log#detailed-feature-description) the user can perform in the system and are determined by the role(s) the user has. The roles and permissions are defined in `json` in `cadasta/config/permissions` and are loaded using a custom management command at `accounts/management/commands/loadpermissions.py`.
 
 ##### Roles
+
 An abstract base `Role` model has been added. The platform's existing `OrganizationRole` and `ProjectRole` models are retained but now implement `Role` and define a  `FK` relation to `auth.Group`. Each `Group` has an associated set of `Permissions`. An `OrganizationRole` for a user with an organization *admin role* will be associated to the `OrgAdmin` `Group` and will have a corresponding set of permissions. Two further class-based roles have been defined for *anonymous* and *public* users respectively.
 
 ##### Core Mixins
-A  number of additional mixins have been added to `cadasta/core/mixins.py`. The `BaseRolePermissionMixin` checks the permissions required to access a view, sets a `_roles` attribute on the view class to hold the users current set of roles and provides a `permissions` property which composes a set of permissions based on the users currently assigned roles. The `RolePermissionRequiredMixin` extends `BaseRolePermissionsMixin` and the default django `auth.PermissionRequiredMixin`. At the moment this checks if the user has permssion to perform an action, but once `django-tutelary` has been completely removed this mixin will delegate to a custom auth backend. This is required to allow the new permissions system and `django-tutelary` to co-exist for the moment. The `RoleLoginPermissionRequiredMixin` checks if the user is authenticated and redirects accordingly. The `APIPermissionRequiredMixin` performs permission checking for `API` views.
+
+A  number of additional mixins have been added to `cadasta/core/mixins.py`. The `BaseRolePermissionMixin` checks the permissions required to access a view.  It holds the users current set of roles and provides a `permissions` property which composes a set of permissions based on the users currently assigned roles. The `RolePermissionRequiredMixin` extends `BaseRolePermissionsMixin` and the default django `auth.PermissionRequiredMixin`. The `RoleLoginPermissionRequiredMixin` checks if the user is authenticated and redirects accordingly. The `APIPermissionRequiredMixin` performs permission checking for `API` views.
 
 ##### Organization View Mixins
+
 The `ProjectQuerySetMixin` has been removed and replaced with `ProjectListMixin` to provide role-based filtering of projects for `UI` and `API` project list views.  Other than this there are minimal changes to organization mixins.
 
 ##### Views
@@ -101,7 +105,8 @@ We define a set of platform-wide Permissions, eg.,
 
 ```python
 p1 = Permission(
-		name=’View Project’, content_type=’Project’, codename=’project.view’
+		name=’View Project’, content_type=’Project’,
+		codename=’project.view’
 	 )
 ```
 
@@ -121,7 +126,6 @@ We define an abstract base model Role with the following attributes:
 class Role (model.Model):
 	class Meta:
 	    abstract = True
-		user = ForeignKey(‘accounts.User’)
 
 	@cached_property
 	def permissions(self):
@@ -149,8 +153,7 @@ When a Role is created it is associated with its corresponding Group, eg:
 
 ```python
 pu = Group.objects.get(name='ProjectUser')
-role = ProjectRole(user=user, group=pu,
-				   project=project, role=’PU’)
+role = ProjectRole(user=user, group=pu, project=project, role=’PU’)
 ```
 When a permissions check need to be made to see if a user can perform a particular action the action will be allowed if the permission is in `role.permissions`.
 
@@ -167,8 +170,7 @@ Since this proposed solution will determine access to platform data in future, i
 
 ## Scalablity
 
-
-The current permissions system implementation based on `django-tutelary` is not scalable, see analysis in the backlog issue [here](https://github.com/Cadasta/cadasta-platform/issues/1467). However, the current proposed solution still requires iterating over organizations and projects for per-object permissions checking - particularly in list views. The lack of bulk test data makes it difficult to test scalability limits. The implementation should be tested against a mirror of the production database to judge whether there is an improvement in performance v's tutelary.
+The current permissions system implementation based on `django-tutelary` is not scalable, see analysis in the backlog issue [here](https://github.com/Cadasta/cadasta-platform/issues/1467). The lack of bulk test data makes it difficult to test scalability limits. The implementation should be tested against mirrors of the production and demo databases to judge whether there is an improvement in performance v's tutelary.
 
 ## Maintainablity
 
