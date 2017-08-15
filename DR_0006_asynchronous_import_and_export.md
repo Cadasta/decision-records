@@ -1,7 +1,7 @@
 # 0006: Asynchronous Import and Export
 
-- **Author:** Adrienne Platner
-- **Status:** Submitted, 2017-01-26
+- **Author:** @amplifi
+- **Status:** Submitted, 2017-01-26; Approved 2017-02-22
 
 ## Context
 
