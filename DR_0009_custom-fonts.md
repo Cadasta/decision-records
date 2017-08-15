@@ -1,7 +1,7 @@
 # 0009: Supported Project Data Fonts in the Cadasta Platform
 
 - **Author:** Chandra Lash
-- **Status:** WIP Draft Proposal, 2017-07-11
+- **Status:** Approved, 2017-07-11
 - **Backlog Issue:** [#62](https://github.com/Cadasta/cadasta-docs/issues/62)
 
 
