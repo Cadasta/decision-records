@@ -1,7 +1,7 @@
 # 0010: External resource file handling
 
 - **Author:** Chandra Lash
-- **Status:** WIP Draft Proposal, 2017-07-11
+- **Status:** Approved, 2017-07-11
 - **Backlog Issue:** [#1646](https://github.com/Cadasta/cadasta-platform/issues/1646)
 
 
