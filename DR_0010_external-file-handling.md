@@ -13,7 +13,11 @@ The Cadasta Platform is inconsistent in its referencing of external static resou
 ## Suggested solution
 
 - Cadasta should adopt a standard practice of hosting all files locally on our servers.
-- These files should be located under `cadasta-platform/cadasta/core/static/` in their respective `css`, `fonts`, `img`, `js` folders.
+- New libraries or plug-ins should be located under `cadasta-platform/cadasta/core/static/`. 
+- A new folder with a descriptive name should be created.
+- A subfolder with the version number should be under the original folder.
+- Folders or files should replicate the original source under the version folder (i.e. `css`, `fonts`, `img`, `js`).
+- File folder structure example: `core/static/leaflet-geocoder-mapzen/1.9.2/leaflet-geocoder-mapzen.css`.
 - We should maintain one version of these resource files to serve on all development environments.
 - These resource files should be updated as-needed as new versions are released.
 
