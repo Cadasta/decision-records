@@ -38,6 +38,8 @@ We aim to replace the pagination functionality of the following views using the 
 - `resources.views.default.LocationDetail` (Relationships and Resources tabs)
 - `resources.views.default.LocationResourceAdd`
 
+**Note:** This decision record focusses mostly on how React will be integrated into our current architecture and less on implementation details of paginated tables itself. I kept the examples in this DR simple on purpose to provide an higher-level overview of how we can use React to solve this problem. The concepts discussed in this DR can also be applied to other problems, where we're dealing with highly interactive scenarios. 
+
 ## Technical Specification
 
 ### UI Changes
@@ -134,7 +136,11 @@ N/A
 
 ### Scalability
 
-When implemented, this approach will improve scalability of the platform because smaller sets will be process in the database and the application server. 
+This approach will improve scalability of the platform because:
+
+- Only data that is being displayed will be transferred. 
+- JSON payload will have a smaller footprint than HTML.
+- We will leverage database functions to slice the dataset into subsets for each page. These operations are highly optimised.
 
 ### Maintainability
 
@@ -180,7 +186,7 @@ We use [Greenkeeper](https://greenkeeper.io/) to monitor the status of npm depen
 
 ### Costs considerations
 
-An organization account for Greenkeeper is $25/month.
+There should be no additional costs. Greenkeeper is free for open-source projects. 
 
 ### Pre-requisites
 
