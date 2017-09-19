@@ -66,7 +66,7 @@ Include here all maintainability aspects that need to be considered.
 
 ### Costs considerations
 
-If the suggested solutions has some costs implications. For instance, AWS costs, licensing, etc. 
+If the suggested solution has some costs implications. For instance, AWS costs, licensing, etc. 
 
 
 ### Pre-requisites
@@ -74,6 +74,6 @@ If the suggested solutions has some costs implications. For instance, AWS costs,
 Are there any tasks that should be implemented before? If so, please provide links to appropriate DRs and/or GitHub issues. 
 
 
-### Defintion of Done
+### Definition of Done
 
 Detailed description of tests to be successfully executed for the feature being considered done. This information should be also moved to the [Manual Test Cases spreadsheet](https://docs.google.com/spreadsheets/d/1JmKVAmdQgjdzg8YhrSDtfBtWckkv7aq4-ZIZCmwbbwU/edit#gid=0). 
